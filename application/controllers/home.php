@@ -9,6 +9,12 @@ class Home extends CI_Controller {
         $this->load->view('template/footer');
     }
 
+    public function about(){
+    	$this->load->view('template/header', array('title' => 'Acerca de DevAzt'));
+    	$this->load->view('template/about');
+    	$this->load->view('template/footer');
+    }
+
 }
 
 /* End of file Home.php */

@@ -76,28 +76,28 @@
               <div class="text-center p-10 pb-40">
                 <i class="flaticon-lightbulb text-theme-colored font-42 mb-0"></i>
                 <h4>WEB - PHP/MVC</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia quasi qui inventore, cumque nulla rerum!</p>
+                <p>Conocemos a la perfección estas tecnologías para el desarrollo de tu sitio web asegurando la satisfacción de tus necesidades.</p>
               </div>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
               <div class="text-center p-10 pb-40">
                 <i class="flaticon-map3 text-theme-colored font-42 mb-0"></i>
                 <h4>Mapas</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia quasi qui inventore, cumque nulla rerum!</p>
+                <p>Logramos implementar mapas de Google en la web y dispositivos mobiles.</p>
               </div>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
               <div class="text-center p-10 pb-40">
                 <i class="flaticon-tools-2 text-theme-colored font-42 mb-0"></i>
                 <h4>Ingenieria de software</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia quasi qui inventore, cumque nulla rerum!</p>
+                <p>Llevamos un proceso de calidad de software utilizando las metodologías correctas para llevarlo acabo.</p>
               </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-12">
               <div class="text-center p-10 pb-40">
                 <i class="flaticon-mobile3 text-theme-colored font-42 mb-0"></i>
                 <h4>Android/iOS/UWP</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia quasi qui inventore, cumque nulla rerum!</p>
+                <p>Desarrollo en Android y iOS con una amplia experiencia y dominio de ambas. </p>
               </div>
             </div>
           </div>
