@@ -23,7 +23,7 @@
           <div class="entry-content bg-white border-1px p-20">
             <div class="entry-meta">
               <ul class="list-inline font-10 letter-space-1 mb-10">
-                <li>ADMIN |</li>
+                <li>ADMINISTRADOR|</li>
                 <li>20 OCTOBER 2016</li>
               </ul>
             </div>

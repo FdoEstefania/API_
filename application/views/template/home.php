@@ -66,7 +66,7 @@
           <div class="row">
             <div class="col-md-6 col-md-offset-3">
               <p class="text-uppercase mb-0"></p>
-              <h2 class="text-uppercase font-36 title line-bottom-no-border">Areas de <span class="text-theme-colored">especialización</span></h2>
+              <h2 class="text-uppercase font-36 title line-bottom-no-border">Áreas de <span class="text-theme-colored">especialización</span></h2>
             </div>
           </div>
         </div>
