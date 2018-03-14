@@ -58,9 +58,9 @@ class DevAzt_Controller extends CI_Controller {
 
         if ($this->config->item('enable_emulate_request')) {
             if ($this->input->post('_method')) {
-            $method = strtolower($this->input->post('_method'));
+                $method = strtolower($this->input->post('_method'));
             } else if ($this->input->server('HTTP_X_HTTP_METHOD_OVERRIDE')) {
-            $method = strtolower($this->input->server('HTTP_X_HTTP_METHOD_OVERRIDE'));
+                $method = strtolower($this->input->server('HTTP_X_HTTP_METHOD_OVERRIDE'));
             }      
         }
 
@@ -255,7 +255,6 @@ class DevAzt_Controller extends CI_Controller {
             $filename = '/' . $this->folder . '/' . $config['file_name'];
             $success($filename);
         }
-        
     }
 
     public function crud_($idparent = null){

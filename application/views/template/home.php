@@ -204,33 +204,33 @@
             </div>
             <div class="col-md-8">          
               <!-- Contact Form -->
-              <form id="contact_form" name="contact_form" class="" action="includes/sendmail.php" method="post">
+              <form id="contact_form" name="contact_form" class="" action="<?= base_url('home/sendmail') ?>" method="post">
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="form-group mb-20">
-                      <input name="form_name" class="form-control" type="text" placeholder="Ingresa tu nombre" required="">
+                      <input name="nombre" class="form-control" type="text" placeholder="Ingresa tu nombre" required="">
                     </div>
                   </div>
                   <div class="col-sm-6">
                     <div class="form-group mb-20">
-                      <input name="form_email" class="form-control required email" type="email" placeholder="Ingresa tu correo">
+                      <input name="correo" class="form-control required email" type="email" placeholder="Ingresa tu correo">
                     </div>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="form-group mb-20">
-                      <input name="form_subject" class="form-control required" type="text" placeholder="¿Qué necesitas?">
+                      <input name="asunto" class="form-control required" type="text" placeholder="¿Qué necesitas?">
                     </div>
                   </div>
                   <div class="col-sm-6">
                     <div class="form-group mb-20">
-                      <input name="form_phone" class="form-control" type="text" placeholder="Ayudanos a saber tu teléfono">
+                      <input name="telefono" class="form-control" type="text" placeholder="Ayudanos a saber tu teléfono">
                     </div>
                   </div>
                 </div>
                     <div class="form-group mb-20">
-                  <textarea name="form_message" class="form-control required" rows="5" placeholder="¡Ahora escribe tu mensaje!"></textarea>
+                  <textarea name="mensaje" class="form-control required" rows="5" placeholder="¡Ahora escribe tu mensaje!"></textarea>
                 </div>
                     <div class="form-group">
                   <input name="form_botcheck" class="form-control" type="hidden" value=""/>
@@ -245,13 +245,13 @@
                     var form_btn = $(form).find('button[type="submit"]');
                     var form_result_div = '#form-result';
                     $(form_result_div).remove();
-                    form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
+                    form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;">Gracias, hemos recibido tu mensaje.</div>');
                     var form_btn_old_msg = form_btn.html();
                     form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
                     $(form).ajaxSubmit({
                       dataType:  'json',
                       success: function(data) {
-                        if( data.status == 'true' ) {
+                        if( data.status ) {
                           $(form).find('.form-control').val('');
                         }
                         form_btn.prop('disabled', false).html(form_btn_old_msg);
