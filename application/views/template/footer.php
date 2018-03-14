@@ -9,7 +9,7 @@
             <ul class="list-inline mt-15">
               <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone font-weight-600 mr-5"></i> <a class="text-gray-darkgray" href="#">+52 5532182680</a> </li>
               <li class="m-0 pl-10 pr-10"> <i class="fa fa-envelope-o font-weight-600 mr-5"></i> <a class="text-gray-darkgray" href="#">jenny_mora@devazt.com</a> </li>
-              <li class="m-0 pl-10 pr-10"> <i class="flaticon-global font-weight-600 mr-5"></i> <a class="text-gray-darkgray" href="#">www.devazt.com</a> </li>
+              <li class="m-0 pl-10 pr-10"> <i class="flaticon-global font-weight-600 mr-5"></i> <a class="text-gray-darkgray" href="#">www.devaztio.com</a> </li>
             </ul>
             <a href="#" class="btn btn-theme-colored btn-xs mt-20">Leer más</a>
           </div>
@@ -32,7 +32,7 @@
                   </span>
                 </div>
               </form>
-              <p class="text-gray-darkgray mt-20">SuscrIbete y mantente altanto de todas nuestras novedades</p>
+              <p class="text-gray-darkgray mt-20">Suscríbete y mantente altanto de todas nuestras novedades</p>
 
               <!-- Mailchimp Subscription Form Validation-->
               <script type="text/javascript">
@@ -68,12 +68,10 @@
           </div>
           <div class="col-md-6 text-right sm-text-center">            
             <ul class="styled-icons icon-theme-colored clearfix">
-              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="https://www.facebook.com/DevAzt-290341818035270/"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="https://twitter.com/devazt_"><i class="fa fa-twitter"></i></a></li>
               <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-              <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-              <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+              <li><a href="https://www.instagram.com/devazt_/"><i class="fa fa-instagram"></i></a></li>
             </ul>
           </div>
         </div>

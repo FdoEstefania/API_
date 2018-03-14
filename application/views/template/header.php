@@ -5,9 +5,9 @@
 <!-- Meta Tags -->
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-<meta name="description" content="DevAzt | Creamos tu aplicacion móvil" />
-<meta name="keywords" content="creative,multipurpose,business,photography,fashion,parallax,portfolio,agency" />
-<meta name="author" content="ThemeMascot" />
+<meta name="description" content="DevAzt | Creamos tu aplicación móvil" />
+<meta name="keywords" content="creativo, multiusos, negocios, fotografía, moda, paralaje, cartera, agencia, xamarin, android, iOS" />
+<meta name="author" content="DevAzt" />
 
 <!-- Page Title -->
 <title>DevAzt | <?= $title ?></title>
@@ -61,7 +61,7 @@
     <div id="spinner" class="spinner large-icon">
       <img alt="" src="<?= base_url('template/images/preloaders/4.gif'); ?>">
     </div>
-    <div id="disable-preloader" class="btn btn-default btn-sm">Disable Preloader</div>
+    <div id="disable-preloader" class="btn btn-default btn-sm">Desactivar Cargador</div>
   </div>
   
   <!-- Header -->
@@ -74,12 +74,12 @@
               <h3 class="text-theme-colored font-26 font-weight-700 mt-5 mb-0">DevAzt</h3>
             </a>
             <ul class="menuzord-menu dark onepage-nav">
-              <li class="active"><a href="<?= base_url('home') ?>">Home</a></li>
+              <li class="active"><a href="<?= base_url('home') ?>">Inicio</a></li>
               <!-- <li><a href="<?= base_url('blog') ?>">Blog</a></li> -->
-              <li><a href="#about">About</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#portfolio">portfolio</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><a href="#about">Acerca de</a></li>
+              <li><a href="#services">Servicios</a></li>
+              <li><a href="#portfolio">Portfolio</a></li>
+              <li><a href="#contact">Contacto</a></li>
             </ul>
           </nav>
         </div>
