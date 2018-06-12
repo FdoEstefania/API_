@@ -134,7 +134,7 @@
                     
                   </div>
                   <div class="portfolio-view">
-                    <a class="image-popup-vertical-fit" title="Android" href="<?= base_url('template/images/surveysmobile.jpg'); ?>">
+                    <a class="image-popup-vertical-fit" title="Surveys Mobile Xamarin Forms App" href="<?= base_url('template/images/surveysmobile.jpg'); ?>">
                       <i class="flaticon-camera3 font-24 text-theme-colored"></i>
                     </a>
                   </div>
@@ -154,7 +154,7 @@
                   <div class="portfolio-bottom-part">
                   </div>
                   <div class="portfolio-view">
-                    <a class="image-popup-vertical-fit" title="Photography" href="<?= base_url('template/images/tecnicocerca1.png'); ?>">
+                    <a class="image-popup-vertical-fit" title="Tecnicocerca Xamarin Forms App" href="<?= base_url('template/images/tecnicocerca1.png'); ?>">
                       <i class="flaticon-camera3 font-24 text-theme-colored"></i>
                     </a>
                   </div>
@@ -173,7 +173,45 @@
                   </div>
                   <div class="portfolio-bottom-part"></div>
                   <div class="portfolio-view">
-                    <a class="image-popup-vertical-fit" title="Photography" href="<?= base_url('template/images/miami.jpg'); ?>">
+                    <a class="image-popup-vertical-fit" title="Web App" href="<?= base_url('template/images/miami.jpg'); ?>">
+                      <i class="flaticon-camera3 font-24 text-theme-colored"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- Portfolio Item End -->
+
+              <!-- Portfolio Item Start -->
+              <div class="gallery-item photography">
+                <div class="thumb">
+                  <img class="img-fullwidth" src="<?= base_url('template/images/pallapp.png'); ?>" alt="project">
+                  <div class="overlay-shade"></div>
+                  <div class="portfolio-upper-part">
+                    <h4 class="text-uppercase mb-0">SGALite</h4>
+                    <h5 class="font-13 text-gray-darkgray mt-5">- Android/iOS</h5>
+                  </div>
+                  <div class="portfolio-bottom-part"></div>
+                  <div class="portfolio-view">
+                    <a class="image-popup-vertical-fit" title="SGALite Xamarin Forms App" href="<?= base_url('template/images/pallapp.png'); ?>">
+                      <i class="flaticon-camera3 font-24 text-theme-colored"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- Portfolio Item End -->
+
+              <!-- Portfolio Item Start -->
+              <div class="gallery-item photography">
+                <div class="thumb">
+                  <img class="img-fullwidth" src="<?= base_url('template/images/cotizaciones.png'); ?>" alt="project">
+                  <div class="overlay-shade"></div>
+                  <div class="portfolio-upper-part">
+                    <h4 class="text-uppercase mb-0">Cotizaciones estilo Airbnb</h4>
+                    <h5 class="font-13 text-gray-darkgray mt-5">- Web/iOS/Android</h5>
+                  </div>
+                  <div class="portfolio-bottom-part"></div>
+                  <div class="portfolio-view">
+                    <a class="image-popup-vertical-fit" title="Cotizaciones" href="<?= base_url('template/images/cotizaciones.png'); ?>">
                       <i class="flaticon-camera3 font-24 text-theme-colored"></i>
                     </a>
                   </div>
@@ -186,6 +224,12 @@
         </div>
       </div>
     </section>
+
+<?php foreach($iframe as $html):
+
+  echo $html;
+
+endforeach; ?>
 
     <!-- Section: Contact -->
     <section id="contact" class="bg-silver-light">

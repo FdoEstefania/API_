@@ -20,44 +20,6 @@
             <div class="twitter-feed clearfix" data-username="devazt_" data-count="3"></div>
           </div>
         </div>
-        <div class="col-sm-6 col-md-3">
-          <div class="widget dark">
-            <h5 class="widget-title line-bottom text-uppercase font-weight-500 font-14">Suscríbete Aquí</h5>
-            <div class="widget-subscribe mt-20">
-              <form id="mailchimp-subscription-form-footer" class="newsletter-form mt-10">
-                <div class="input-group">
-                  <input type="email" id="mce-EMAIL-footer" data-height="48px" class="form-control input-sm" placeholder="Tu Correo" name="EMAIL" value="">
-                  <span class="input-group-btn">
-                    <button type="submit" class="btn btn-colored btn-theme-colored text-white btn-xs m-0" data-height="48px">Suscríbete</button>
-                  </span>
-                </div>
-              </form>
-              <p class="text-gray-darkgray mt-20">Suscríbete y mantente altanto de todas nuestras novedades</p>
-
-              <!-- Mailchimp Subscription Form Validation-->
-              <script type="text/javascript">
-                $('#mailchimp-subscription-form-footer').ajaxChimp({
-                    callback: mailChimpCallBack,
-                    url: '//thememascot.us9.list-manage.com/subscribe/post?u=a01f440178e35febc8cf4e51f&amp;id=49d6d30e1e'
-                });
-
-                function mailChimpCallBack(resp) {
-                    // Hide any previous response text
-                    var $mailchimpform = $('#mailchimp-subscription-form-footer'),
-                        $response = '';
-                    $mailchimpform.children(".alert").remove();
-                    if (resp.result === 'success') {
-                        $response = '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + resp.msg + '</div>';
-                    } else if (resp.result === 'error') {
-                        $response = '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + resp.msg + '</div>';
-                    }
-                    $mailchimpform.prepend($response);
-                }
-              </script>
-
-            </div>
-          </div>
-        </div>
       </div>
     </div>
     <div class="footer-bottom bg-black-333">
@@ -85,6 +47,16 @@
 <!-- Footer Scripts -->
 <!-- JS | Custom script for all pages -->
 <script src="<?= base_url('template/js/custom.js'); ?>"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113349014-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-113349014-2');
+</script>
 
 </body>
 </html>

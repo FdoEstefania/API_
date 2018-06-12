@@ -79,6 +79,7 @@
               <li><a href="#about">Acerca de</a></li>
               <li><a href="#services">Servicios</a></li>
               <li><a href="#portfolio">Portfolio</a></li>
+              <li><a href="<?= base_url('control') ?>">Controles/Plugins</a></li>
               <li><a href="#contact">Contacto</a></li>
             </ul>
           </nav>

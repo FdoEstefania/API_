@@ -48,10 +48,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = '';
-$db['default']['database'] = '';
+$db['default']['hostname'] = 'sql132.main-hosting.eu';
+$db['default']['username'] = 'u414866090_azt';
+$db['default']['password'] = '0Y9AKyvk1rdbs9ZulI';
+$db['default']['database'] = 'u414866090_azt';
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
