@@ -81,6 +81,31 @@
               <li><a href="#portfolio">Portfolio</a></li>
               <li><a href="<?= base_url('control') ?>">Controles/Plugins</a></li>
               <li><a href="#contact">Contacto</a></li>
+              
+                <?php 
+                  $idcliente = $this->session->userdata('IdCliente');
+                  if(!empty($idcliente)){
+                    if($idcliente == "1"){ ?> 
+                    <li>
+                      <a href="<?= base_url('adminpanel/index') ?>"><?= $this->session->userdata('Nombre'); ?></a>
+                    </li>
+                    <li>
+                      <a href="<?= base_url('home/logout') ?>">Cerrar sesion</a>
+                    </li>
+                <?php }else{ ?>
+                    <li>
+                      <a href="<?= base_url('dashboard/index') ?>"><?= $this->session->userdata('Nombre'); ?></a> 
+                    </li>
+                    <li>
+                      <a href="<?= base_url('home/logout') ?>">Cerrar sesion</a>
+                    </li>
+                <?php } 
+                  }else{ ?>
+                    <li>
+                      <a href="<?= base_url('home/login') ?>">Login</a>
+                    </li>
+                <?php  } ?>
+              </li>
             </ul>
           </nav>
         </div>

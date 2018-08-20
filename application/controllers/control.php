@@ -14,23 +14,41 @@ class Control extends CI_Controller {
     }
 
     public function getlistofcontrols(){
-        $controles = $this->db->query("SELECT * FROM control")->result();
+        $controles = $this->db->query("SELECT * FROM control WHERE online = 1")->result();
         $html = $this->load->view('control/index', array("controles" => $controles, "height" => 700), true);
         return $html;
     }
 
-    public function validateapikey($apikey = ''){
+    public function validateapikey($apikey = '', $idplatform = 4){
         if(empty($apikey)){
             echo null;
         }else{
-            $query = $this->db->query("SELECT * FROM clientecontrol WHERE ApiKey = '$apikey' AND Online = 1");
-            $suscriptionactive = $query->num_rows() > 0;
-            if($suscriptionactive){
+            $suscriptionactive = $this->db->query("SELECT * FROM clientecontrol WHERE ApiKey = '$apikey' AND Online = 1")->row();
+            if($suscriptionactive != null){
                 $this->db->set('calls', 'calls+1', FALSE);
-                $this->db->where('idclientecontrol', $query->row()->IdClienteControl);
+
+                switch ($idplatform) {
+                    case 1:
+                        $this->db->set('droidcalls', 'droidcalls+1', FALSE);
+                        break;
+                    case 2:
+                        $this->db->set('ioscalls', 'ioscalls+1', FALSE);
+                        break;
+                    case 3:
+                        $this->db->set('uwpcalls', 'uwpcalls+1', FALSE);
+                        break;
+                }
+
+                $this->db->where('idclientecontrol', $suscriptionactive->IdClienteControl);
                 $this->db->update('clientecontrol');
+
+                $this->db->insert('apicall', array("idcontrol" => $suscriptionactive->IdControl,
+                                                    "idcliente" => $suscriptionactive->IdCliente,
+                                                    "idplatform" => $idplatform,
+                                                    "idclientecontrol" => $suscriptionactive->IdClienteControl
+                                                ));
             }
-            echo json_encode(array("Success" => $suscriptionactive, "Message" => $suscriptionactive ? "OK" : "No hay una cuenta para este control"));
+            echo json_encode(array("Success" => $suscriptionactive != null, "Message" => $suscriptionactive ? "OK" : "No hay una cuenta para este control", "ControlPermissions" => $suscriptionactive));
         }
     }
 
@@ -65,7 +83,7 @@ class Control extends CI_Controller {
     }
 
     public function getview($control){
-        $this->load->view('template/header', array("title" => "PDF Viewer for Xamarin Forms"));
+        $this->load->view('template/header', array("title" => $control->Nombre));
         $this->load->view('control/detalle', array("control" => $control));
         $this->load->view('template/footer');
     }
@@ -79,14 +97,32 @@ class Control extends CI_Controller {
             $email = $this->input->post('email');
             $nombre = $this->input->post('nombre');
 
+            $post = $this->input->post();
+            $password = "";
+
             if(!empty($email) && !empty($nombre)){   
                 $this->db->where('email', $email);
                 $cliente = $this->db->get('cliente')->row();
                 if($cliente == null){
-                    $this->db->insert('cliente', $this->input->post());
+
+                    $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+                    $pass = array(); //remember to declare $pass as an array
+                    $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+                    for ($i = 0; $i < 8; $i++) {
+                        $n = rand(0, $alphaLength);
+                        $pass[] = $alphabet[$n];
+                    }
+
+                    $password = implode($pass);
+
+                    $post["password"] = $password;
+
+                    $this->db->insert('cliente', $post);
                     $id = $this->db->insert_id();
                     $this->db->where('idcliente', $id);
                     $cliente = $this->db->get('cliente')->row();
+                }else{
+                    $password = $cliente->Password;
                 }
 
                 $apikey = $this->guidv4();
@@ -95,9 +131,13 @@ class Control extends CI_Controller {
                 $this->sendemail("<p>Se ha comprado el control $control->Nombre</h2><hr><br>El id del cliente es $cliente->IdCliente // $cliente->Email </p>", "daniel_lopez@devazt.com");
                 
                 $baseurl = base_url('control/thanks/' . $idcontrol);
+                
+                $loginurl = base_url('home/login');
+
                 // $download = base_url('control/download?key=' . $apikey . '&idcontrol=' . $idcontrol);
-                $this->sendemail("<h2>Hola $nombre</h2><p>Muchas gracias por realizar la compra del control $control->Nombre, en breve nos pondremos en contacto contigo </p>" .
-                                "<hr><br> <a href='$baseurl'>Instrucciones de uso / Ayuda</a> ", "$email, daniel_lopez@devazt.com");
+                $this->sendemail("<h2>Hola $nombre</h2><p>Muchas gracias por realizar la compra del control $control->Nombre," .
+                                 "en breve nos pondremos en contacto contigo, estos son tus datos de acceso $email / $password </p>" .
+                                "<hr><br> <a href='$baseurl'>Instrucciones de uso / Ayuda</a> <a href='$loginurl'> Login </a> ", "$email, daniel_lopez@devazt.com");
 
                 header("Location: " . $baseurl);
             }else{
